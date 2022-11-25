@@ -1,0 +1,16 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: SmartBard EC2 Cloudformation Template
+
+Parameters: 
+
+Resources: 
+  myEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      KeyName: 
+      DisableApiTermination: 
+      ImageId: 
+      InstanceType: 
+      Monitoring: true
+      SecurityGroupIds:
+        - sg-ids

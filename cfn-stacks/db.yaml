@@ -1,0 +1,44 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: SmartBard Database Cloudformation Template
+Parameters: 
+
+Mappings: 
+
+Conditions: 
+
+Resources: 
+  rdsDBInstance:
+    Type: AWS::RDS::DBInstance
+    Properties:
+      AllocatedStorage: 
+      DBInstanceClass: 
+      AllowMajorVersionUpgrade: true|false
+      AutoMinorVersionUpgrade: true|false
+      AvailabilityZone: 
+      BackupRetentionPeriod: 
+      CharacterSetName: 
+      DBInstanceIdentifier: 
+      DBName: 
+      DBParameterGroupName: 
+      DBSecurityGroups: 
+        - db-sg-group
+      DBSnapshotIdentifier: 
+      DBSubnetGroupName: 
+      Engine: mysql
+      EngineVersion: 
+      Iops: 
+      KmsKeyId: 
+      LicenseModel: 
+      MasterUsername: 
+      MasterUserPassword: 
+      MultiAZ: true
+      OptionGroupName: 
+      Port: 
+      PreferredBackupWindow: 
+      PreferredMaintenanceWindow: 
+      PubliclyAccessible: false
+      SourceDBInstanceIdentifier: 
+      StorageEncrypted: true
+      StorageType: 
+      VPCSecurityGroups:
+        - vpc-sg-id
