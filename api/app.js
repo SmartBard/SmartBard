@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+const { allowedNodeEnvironmentFlags } = require('process');
 
 var app = express();
 
@@ -37,5 +38,8 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+const port = 5000
+app.listen(port, console.log(`Listening on port ${port}`))
 
 module.exports = app;
