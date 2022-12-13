@@ -14,12 +14,15 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+// middleware
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')))
+// app.use(express.static('../ui/public'))
 
+// routes
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
@@ -38,8 +41,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-const port = 5000
-app.listen(port, console.log(`Listening on port ${port}`))
 
 module.exports = app;
